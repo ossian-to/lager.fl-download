@@ -13,20 +13,18 @@
   margin: 0 auto;
   max-width: 1920px;
   width: 100%;
-  // min-height: 900px;
-  // height: 700px;
   background-color: #c9f3ff;
   background-image: url(../images/sky-bg.jpg);
   background-repeat: no-repeat;
   background-position: top center;
+  // box-shadow: 0 0 300px rgba(24, 69, 134, 0.8) inset;
+  // mix-blend-mode: hard-light;
 }
 
 // 遊戲 LOGO
 
 .game-logo{
-  margin: 0 auto;
-  padding: 1em 2em;
-  max-width: 359px;
+  max-width: 380px;
   z-index: 5;
   img{
     width: 100%;
@@ -35,8 +33,7 @@
 
 .fore-back{
   position: relative;
-  min-height: 660px;
-  // border: 1px solid red;
+  min-height: 800px;
 }
 
 // 遠景的山及城堡
@@ -44,24 +41,25 @@
 .mountains-castles{
   position: absolute;
   left: calc(50% - 970px);
-  width: 1224px;
+  width: 100%;
   height: 100%;
   background-image: url(../images/back-end.png);
   background-repeat: no-repeat;
-  background-position: bottom left;
-  transform: scale(1.15);
-  // filter: blur(10px);
+  // background-position: bottom left;
+  transform: scale(1);
+  // filter: blur(1px);
 }
 
 // 前景的房子及道路
 
 .fore-ground{
   position: absolute;
+  bottom: -5px;
   width: 100%;
   height: 100%;
   background-image: url(../images/fore-ground.png);
   background-repeat: no-repeat;
-  background-position: bottom center;
+  // background-position: bottom center;
   // transform: scale(1.65);
   // filter: blur(6px);
 }
@@ -76,16 +74,16 @@
   background-image: url(../images/grove.png);
   background-position: bottom right;
   background-repeat: no-repeat;
-  filter: blur(3px);
-  transform: scale(1.1);
+  filter: blur(10px);
+  // transform: scale(1.1);
 }
 
 // 人類女性
 
 .human-girl{
   position: absolute;
-  left: calc(50% - 850px);
-  bottom: -120px;
+  left: calc(50% - 730px);
+  bottom: -250px;
   width: 388px;
   height: 726px;
   background-image: url(../images/human-woman.png);
@@ -94,18 +92,59 @@
   transform: scale(0.9);
 }
 
+// 豬豬
+
+.pig{
+  position: absolute;
+  bottom: -4em;
+  left: calc(50% - 120px);
+  width: 143px;
+  height: 199px;
+  background-image: url(../images/pig.png);
+  background-position: buttom center;
+  background-repeat: no-repeat;
+  transform: scale(1.25);
+  filter:drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.65));
+  // filter: blur(6px);
+  // z-index: 1;
+  &::before{
+    content: "";
+    position: absolute;
+    bottom: 0em;
+    left: 17em;
+    width: 143px;
+    height: 199px;
+    background-image: url(../images/pig.png);
+    background-position: buttom center;
+    background-repeat: no-repeat;
+    transform: scale(0.7) rotate(70deg);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 1em;
+    left: -10em;
+    width: 143px;
+    height: 199px;
+    background-image: url(../images/pig.png);
+    background-position: buttom center;
+    background-repeat: no-repeat;
+    transform: scale(0.6) rotate(-30deg);
+  }
+}
+
 // 雪怪
 
 .snow-monster{
   position: absolute;
   bottom: -15em;
-  left: calc(50% + 420px);
+  left: calc(50% + 200px);
   width: 832px;
   height: 865px;
   background-image: url(../images/snow-monster.png);
   background-position: buttom center;
   background-repeat: no-repeat;
-  // transform: scale(1);
+  transform: scale(0.85);
 }
 
 // 兔子
@@ -119,106 +158,60 @@
   background-image: url(../images/rabbit.png);
   background-position: buttom center;
   background-repeat: no-repeat;
-  animation: jump 1.25s ease-in-out infinite;
 }
 
 .rabbit{
-  left: calc(50% + 660px);
-  bottom: 10em;
-  transform: rotate(20deg);
-  z-index: 6;
+  // left: calc(50% + 350px);
+  // top: 1.5em;
+  transform: scale(1) rotate(0deg);
+  // z-index: 1;
   &::before{
-    left: calc(50% - 200px);
-    bottom: -13em;
-    transform: scale(0.65) rotate(-45deg);
-    animation: jump2 1.25s ease-in-out infinite;
-    animation-delay: 0.3s;
+    left: calc(50% - 450px);
+    top: 3em;
+    transform: scale(0.65) rotate(30deg);
   }
   &::after{
-    left: calc(50% - 350px);
-    bottom: -13em;
-    transform: scale(0.85) rotate(290deg);
-    animation: jump3 1.25s ease-in-out infinite;
-    animation-delay: 0.6s;
-  }
-}
-
-@keyframes jump{
-  0%{
-    transform: translateY(0px) scale(1) rotate(20deg);
-  }
-  50%{
-    transform: translateY(-50px) scale(0.85) rotate(30deg);
-  }
-  100%{
-    transform: translateY(0px) scale(1) rotate(20deg);
-  }
-}
-
-@keyframes jump2{
-  0%{
-    transform: translateY(0px) scale(0.65) rotate(-45deg);
-  }
-  50%{
-    transform: translateY(-50px) scale(0.75) rotate(-55deg);
-  }
-  100%{
-    transform: translateY(0px) scale(0.65) rotate(-45deg);
-  }
-}
-
-@keyframes jump3{
-  0%{
-    transform: translateY(0px) scale(0.85) rotate(290deg);
-  }
-  50%{
-    transform: translateY(-50px) scale(0.8) rotate(320deg);
-  }
-  100%{
-    transform: translateY(0px) scale(0.85) rotate(290deg);
+    left: calc(50% + 100px);
+    top: 8em;
+    transform: scale(0.85) rotate(-30deg);
   }
 }
 
 // 下載 icon 及連結
 
 .download-zone{
-  // position: absolute;
-  // padding-top: 7em;
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
   width: 100%;
   .glass{
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    padding: 2em;
-    max-width: 700px;
-    width: calc(100% - 2em);
-    // min-height: 1300px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(1em);
+    // padding: 2em;
+    max-width: 680px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(0.75em);
     border-radius: 1.5em;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 0 0 transparent, 0 0 0 white, 0 0 15px rgba(255, 255, 255, 0.5) inset;
-    transition: box-shadow 0.3s;
-    // z-index: 5;
-    &:hover{
-      box-shadow: 0 15px 10px -5px white, 0 0 40px white, 0 0 15px rgba(255, 255, 255, 0.5) inset;
-    }
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.95) inset;
   }
 }
 .glass-grid{
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  // grid-template-columns: 3fr 2fr;
   gap: 1em;
 }
 
 ul{
   &.download-links{
     margin: 0;
-    padding: 0 0 1.5em 0;
+    padding: 0;
     width: 100%;
     list-style: none;
     li{
-      padding-bottom: 0.5em;
+      padding-bottom: 1em;
       &:nth-child(1){
         a{
           &::before{
@@ -281,6 +274,106 @@ ul{
   }
 }
 
+// 派艾波
+
+.piaipo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: calc(100% - 1em);
+  // background-color: white;
+  border-radius: 10px;
+  > figure{
+    position: relative;
+    transform: translateY(2.5em);
+    img{
+      animation: jump 0.75s ease-in-out infinite;
+    }
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: -0.35em;
+      width: 100%;
+      height: 20px;
+      background-color: rgba(0, 0, 0, 0.65);
+      border-radius: 50%;
+      transform: scale(0.65) translateY(0em);
+      filter: blur(3px);
+      animation: jump-shadow 0.75s ease-in-out infinite;
+    }
+  }
+  .piaipo-talk{
+    position: absolute;
+    top: 1.5em;
+    left: 1.25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
+    border-radius: 150px;
+    background-color: white;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    &::before{
+      content: "";
+      position: absolute;
+      top: 4em;
+      left: 1em;
+      width: 32px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      transform: rotate(-10deg);
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      top: 5.5em;
+      left: 2.5em;
+      width: 20px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      transform: rotate(-20deg);
+    }
+  }
+}
+
+@keyframes jump {
+  0%{
+    transform: translateY(0em);
+  }
+  50%{
+    transform: translateY(-3.5em);
+  }
+  100%{
+    transform: translateY(0em);
+  }
+}
+@keyframes jump-shadow {
+  0%{
+    transform:  scale(0.65) translateY(0em);
+    background-color: rgba(0, 0, 0, 0.65);
+    filter: blur(3px);
+  }
+  50%{
+    transform:  scale(0.25) translateY(0em);
+    background-color: rgba(0, 0, 0, 0.15);
+    filter: blur(12px);
+  }
+  100%{
+    transform:  scale(0.65) translateY(0em);
+    background-color: rgba(0, 0, 0, 0.65);
+    filter: blur(3px);
+  }
+}
+
 audio{
   width: 100%;
 }
@@ -289,27 +382,27 @@ audio{
 
 @keyframes clouds-loop-1 {
   to {
-    background-position: -1579px 0;
+    background-position: 3158px 0;
   }
 }
 .clouds-1 {
   background-image: url("../images/cloud-3.png");
-  animation: clouds-loop-1 70s infinite linear;
+  animation: clouds-loop-1 120s infinite linear;
 }
 
 @keyframes clouds-loop-2 {
   to {
-    background-position: -1000px 0;
+    background-position: 2000px 0;
   }
 }
 .clouds-2 {
   background-image: url("../images/cloud-2.png");
-  animation: clouds-loop-2 55s infinite linear;
+  animation: clouds-loop-2 50s infinite linear;
 }
 
 @keyframes clouds-loop-3 {
   to {
-    background-position: -1579px 0;
+    background-position: 3158px 0;
   }
 }
 .clouds-3 {
@@ -329,7 +422,7 @@ audio{
   right: 0;
   height: 100%;
   // backdrop-filter: blur(0.085em);
-  // mix-blend-mode: hard-light;
+  mix-blend-mode: hard-light;
   transform: scale(1.5,1);
   // filter: blur(0.1em);
 }
@@ -344,3 +437,270 @@ audio{
   left: 0;
   height: 500px;
 }
+
+.fb-rocker{
+  margin: 0 auto;
+  // padding: 1em 0;
+  list-style: none;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // gap: 1em;
+  max-width: 700px;
+  width: 100%;
+  li{
+    transform: scale(1);
+    transition: transform 0.3s;
+    &:hover{
+      transform: scale(0.9);
+    }
+    a{
+      display: block;
+      text-decoration: none;
+      img{
+        width: 100%;
+        filter:drop-shadow(0 2px 1px rgba(0, 0, 0, 0.85));
+      }
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  padding: 3em 1em;
+  color: #999;
+  font-size: 0.75em;
+  text-align: center;
+  .game-grading,
+  .lager-zone {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1em;
+    text-align: initial;
+    .lager-logo{
+      a{
+        &:nth-child(1){
+          padding-right: 0.75em;
+        }
+      }
+    }
+  }
+  .game-grading{
+    .game-grading-list{
+      ul{
+        margin: 0;
+        padding-left: 1.25em;;
+      }
+    }
+  }
+}
+
+// RWD
+
+@media only screen and (min-width: 0px){
+  .game-logo{
+    position: static;
+    margin: 0 auto;
+    padding: 2em 3em;
+  }
+  .glass{
+    padding: 1em;
+  }
+  // .glass-grid{
+  //   grid-template-columns: 1fr;
+  //   gap: 1em;
+  // }
+  .glass-grid{
+    grid-template-columns: 1fr;
+    gap: 1em;
+    .right{
+      display: none;
+    }
+  }
+  .fb-rocker{
+    display: grid;
+    padding: 2em 1em;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+  }
+  .grove{
+    transform: scale(1);
+  }
+  .mountains-castles,
+  .fore-ground{
+    background-position: bottom right;
+    filter: blur(20px);
+  }
+  .pig,
+  .rabbit{
+    display: none;
+  }
+  .rabbit{
+    // left: calc(50% + 150px);
+    left: calc(50% + 70px);
+    top: -6.5em;
+    z-index: 1;
+  }
+  .footer{
+    flex-wrap: wrap;
+    .game-grading{
+      flex-wrap: wrap;
+      width: 1000px;
+      .game-grading-mark{
+        width: 100%;
+        text-align: center;
+        img{
+          width: 80px;
+        }
+      }
+    }
+    .lager-zone{
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+      .lager-logo{
+        order: 0;
+      }
+      .footer-text{
+        text-align: center;
+        span{
+          &:nth-child(1){
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 500px){
+  .game-logo{
+    padding: 1em 2em;
+  }
+  .glass{
+    padding: 2em;
+  }
+  .mountains-castles,
+  .fore-ground{
+    background-position: bottom center;
+  }
+  .grove{
+    transform: scale(1);
+  }
+  .snow-monster,
+  .human-girl{
+    display: none;
+  }
+  .footer{
+    .game-grading{
+      flex-wrap: nowrap;
+      .game-grading-mark{
+        width: unset;
+        text-align: unset;
+        img{
+          width: 50px;
+        }
+      }
+    }
+    .lager-zone{
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 3em;
+      width: 100%;
+      border-top: 1px dotted #666;
+      .lager-logo{
+        order: 1;
+      }
+      .footer-text{
+        text-align: right;
+        span{
+          display: block;
+          &:nth-child(1){
+            display: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .fore-ground{
+    filter: unset;
+  }
+  .mountains-castles{
+    filter: unset;
+  }
+  .mountains-castles{
+    background-position: bottom left;
+  }
+  .snow-monster,
+  .human-girl{
+    display: unset;
+  }
+  .glass-grid{
+    grid-template-columns: 3fr 2fr;
+    .right{
+      display: block;
+    }
+  }
+  .fb-rocker{
+    padding: 2em 2.25em;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
+  .pig,
+  .rabbit{
+    display: unset;
+  }
+}
+@media only screen and (min-width: 1500px){
+  .game-logo{
+    position: absolute;
+    top: 66px;
+    left: 40px;
+  }
+  .download-zone{
+    padding-top: 9em;
+  }
+  .grove{
+    transform: scale(1.1);
+  }
+  .pig{
+    z-index: unset;
+  }
+  .rabbit{
+    // left: calc(50% + 70px);
+    top: 2.5em;
+    // z-index: 1;
+  }
+  .footer{
+    flex-wrap: nowrap;
+    .game-grading{
+      padding-top: unset;
+      width: unset;
+      border-top: unset;
+    }
+    .lager-zone{
+      padding-top: unset;
+      border-top: unset;
+      width: unset;
+    }
+  }
+}
+
+@media only screen and (min-width: 1700px){
+  .fb-rocker{
+    position: absolute;
+    top: 270px;
+    left: 60px;
+    grid-template-columns: 1fr;
+    width: 340px;
+  }
+  .pig{
+    z-index: 1;
+  }
+}
+
