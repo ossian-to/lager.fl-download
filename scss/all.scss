@@ -45,7 +45,7 @@
   background-image: url(../images/back-end.png);
   background-repeat: no-repeat;
   // background-position: bottom left;
-  // transform: scale(1.15);
+  transform: scale(1.35);
   // filter: blur(10px);
 }
 
@@ -59,7 +59,7 @@
   background-image: url(../images/fore-ground.png);
   background-repeat: no-repeat;
   // background-position: bottom center;
-  transform: scale(1.05);
+  // transform: scale(1.35);
   // filter: blur(6px);
 }
 
@@ -67,112 +67,69 @@
 
 .grove{
   position: absolute;
-  bottom: -2em;
+  bottom: -0.5em;
   width: 100%;
   height: 348px;
   background-image: url(../images/grove.png);
   background-position: bottom right;
   background-repeat: no-repeat;
   filter: blur(10px);
-  // transform: scale(1.1);
+  // transform: scale(1);
 }
 
 // 人類女性
 
 .human-girl{
   position: absolute;
-  left: calc(50% - 730px);
+  left: calc(50% - 750px);
   bottom: -250px;
   width: 388px;
   height: 726px;
   background-image: url(../images/human-woman.png);
   background-position: buttom center;
   background-repeat: no-repeat;
-  transform: rotate(-5deg);
+  // transform: rotate(-5deg);
+}
+// 人類男性
+
+.human-man{
+  position: absolute;
+  left: calc(50% - 880px);
+  bottom: -250px;
+  width: 407px;
+  height: 760px;
+  background-image: url(../images/human-man.png);
+  background-position: buttom center;
+  background-repeat: no-repeat;
+  // transform: rotate(-5deg);
 }
 
-// 豬豬
+// 豬
 
 .pig{
   position: absolute;
-  bottom: -4em;
-  left: calc(50% - 480px);
-  width: 143px;
-  height: 199px;
+  left: calc(50% - 300px);
+  bottom: 30px;
+  width: 407px;
+  height: 760px;
   background-image: url(../images/pig.png);
   background-position: buttom center;
   background-repeat: no-repeat;
-  // transform: scale(1.15);
-  filter:drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.65));
-  // filter: blur(6px);
-  // z-index: 1;
-  &::before{
-    content: "";
-    position: absolute;
-    bottom: -1em;
-    left: 25em;
-    width: 143px;
-    height: 199px;
-    background-image: url(../images/pig.png);
-    background-position: buttom center;
-    background-repeat: no-repeat;
-    transform: scale(0.9) rotate(70deg);
-  }
-  &::after{
-    content: "";
-    position: absolute;
-    bottom: 20em;
-    left: -16em;
-    width: 143px;
-    height: 199px;
-    background-image: url(../images/pig.png);
-    background-position: buttom center;
-    background-repeat: no-repeat;
-    transform: scale(0.8) rotate(-30deg);
-  }
+  transform: rotate(-20deg);
 }
+
 // 雪怪
 
 .snow-monster{
   position: absolute;
   bottom: -15em;
-  left: calc(50% + 140px);
+  left: calc(50% + 150px);
   width: 832px;
   height: 865px;
   background-image: url(../images/snow-monster.png);
   background-position: buttom center;
   background-repeat: no-repeat;
-  transform: scale(0.925);
-}
-
-// 兔子
-.rabbit,
-.rabbit::before,
-.rabbit::after{
-  content: "";
-  position: absolute;
-  width: 174px;
-  height: 123px;
-  background-image: url(../images/rabbit.png);
-  background-position: buttom center;
-  background-repeat: no-repeat;
-}
-
-.rabbit{
-  // left: calc(50% + 350px);
-  // top: 1.5em;
-  transform: scale(1) rotate(0deg);
-  // z-index: 1;
-  &::before{
-    left: calc(50% - 660px);
-    top: 2em;
-    transform: scale(0.65) rotate(30deg);
-  }
-  &::after{
-    left: calc(50% + 35px);
-    top: 6em;
-    transform: scale(0.9) rotate(-35deg);
-  }
+  transform: scale(1);
 }
 
 // 下載 icon 及連結
@@ -189,11 +146,11 @@
     // padding: 2em;
     max-width: 680px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(0.75em);
-    border-radius: 1.5em;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.95) inset;
+    // background-color: rgba(255, 255, 255, 0.05);
+    // backdrop-filter: blur(5em);
+    // border-radius: 1.5em;
+    // border: 1px solid rgba(255, 255, 255, 0.75);
+    // box-shadow: 0 0 15px rgba(255, 255, 255, 0.95) inset;
   }
 }
 .glass-grid{
@@ -425,17 +382,7 @@ audio{
   .mountains-castles,
   .fore-ground{
     background-position: bottom right;
-    filter: blur(20px);
-  }
-  .pig,
-  .rabbit{
-    display: none;
-  }
-  .rabbit{
-    // left: calc(50% + 150px);
-    left: calc(50% + 280px);
-    top: -12em;
-    z-index: 1;
+    filter: blur(50px);
   }
   .footer{
     flex-wrap: wrap;
@@ -539,26 +486,8 @@ audio{
       display: block;
     }
   }
-  .pig,
-  .rabbit{
-    display: unset;
-  }
 }
 @media only screen and (min-width: 1500px){
-  // .game-logo{
-  //   position: absolute;
-  //   top: 70px;
-  //   left: 70px;
-  // }
-  // .download-zone{
-  //   padding-top: 9em;
-  // }
-  // .grove{
-  //   transform: scale(1.1);
-  // }
-  .pig{
-    z-index: unset;
-  }
   .footer{
     flex-wrap: nowrap;
     .game-grading{
@@ -573,10 +502,4 @@ audio{
     }
   }
 }
-
-// @media only screen and (min-width: 1700px){
-//   .pig{
-//     z-index: 1;
-//   }
-// }
 
